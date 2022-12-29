@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.DetailsFragment"
+        tools:ignore="ScrollViewCount">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+        >
+
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="20dp" />
+
+        <TextView
+                android:id="@+id/receta_titulo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/title_detail"
+                style="@style/Widget.Recetas.TextName"
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintEnd_toStartOf="@id/guideline2"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+        <TextView
+                android:id="@+id/receta_ingredientes_titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/ingredientes_title"
+                style="@style/Widget.Recetas.TextDetail"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toEndOf="@+id/receta_imagen"
+                app:layout_constraintTop_toTopOf="@id/receta_imagen" />
+
+        <ImageView
+                android:id="@+id/receta_imagen"
+                android:layout_width="132dp"
+                android:layout_height="132dp"
+                android:layout_marginTop="16dp"
+
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintEnd_toStartOf="@id/guideline2"
+                app:layout_constraintTop_toBottomOf="@id/receta_titulo"
+                app:layout_constraintHorizontal_bias="0"
+                />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/receta_ingredientes"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/receta_imagen"
+                app:layout_constraintEnd_toStartOf="@id/guideline2"
+                app:layout_constraintHorizontal_bias="0.8"
+                app:layout_constraintStart_toEndOf="@id/receta_imagen"
+                app:layout_constraintTop_toBottomOf="@id/receta_ingredientes_titulo" />
+
+        <TextView
+                android:id="@+id/receta_descripcion_titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/descripcion_title"
+                style="@style/Widget.Recetas.TextDetail"
+                app:layout_constraintHorizontal_bias="0"
+
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toEndOf="@+id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/receta_imagen"
+                app:layout_constraintBottom_toTopOf="@id/receta_descripcion"/>
+
+        <TextView
+                android:id="@+id/receta_descripcion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAlignment="gravity"
+
+                app:layout_constraintEnd_toStartOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@id/receta_descripcion_titulo"
+                />
+
+        <ImageButton
+                android:id="@+id/map_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:src="@android:drawable/ic_dialog_map"
+                app:backgroundTint="@color/cardview_shadow_end_color"
+                app:tint="@color/common_google_signin_btn_text_light_default"
+                app:rippleColor="@color/cardview_shadow_end_color"
+                app:layout_constraintVertical_bias="0.2"
+                app:layout_constraintTop_toBottomOf="@+id/receta_descripcion"
+                app:layout_constraintEnd_toStartOf="@id/guideline2"
+                app:layout_constraintStart_toEndOf="@id/guideline1"
+                app:layout_constraintBottom_toTopOf="@id/guideline3"
+
+                android:focusable="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>
